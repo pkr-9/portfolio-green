@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base: Warm Ivory / Paper */
+    --background: 60 30% 98%;
+    /* Text: Deep Loam / Dark Warm Grey */
+    --foreground: 24 10% 15%;
+
+    /* Cards: Slightly warmer white */
+    --card: 60 30% 97%;
+    --card-foreground: 24 10% 15%;
+
+    /* Popovers: Same as card */
+    --popover: 60 30% 97%;
+    --popover-foreground: 24 10% 15%;
+
+    /* Primary: Deep Forest Green */
+    --primary: 142 72% 29%;
+    --primary-foreground: 355 100% 97%; /* White text on green */
+
+    /* Secondary: Soft Moss / Sage */
+    --secondary: 138 22% 90%;
+    --secondary-foreground: 142 72% 29%;
+
+    /* Muted: Stone Grey */
+    --muted: 60 5% 90%;
+    --muted-foreground: 25 5% 45%;
+
+    /* Accent: Warm Sand/Wheat (Hover states) */
+    --accent: 38 50% 92%;
+    --accent-foreground: 142 72% 29%;
+
+    /* Destructive: Burnt Orange/Red */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 60 30% 98%;
+
+    /* Borders: Soft Earth Grey */
+    --border: 24 6% 85%;
+    --input: 24 6% 85%;
+
+    /* Ring: Focus rings match Primary */
+    --ring: 142 72% 29%;
+
+    /* Radius: Slightly more rounded for organic feel */
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Base: Deep Pine / Charcoal */
+    --background: 150 40% 6%;
+    /* Text: Soft Mist / White */
+    --foreground: 140 10% 90%;
+
+    /* Cards: Darker Pine */
+    --card: 150 40% 8%;
+    --card-foreground: 140 10% 90%;
+
+    --popover: 150 40% 8%;
+    --popover-foreground: 140 10% 90%;
+
+    /* Primary: Bright Emerald/Fern (Pops against dark) */
+    --primary: 142 60% 45%;
+    --primary-foreground: 144 70% 10%; /* Dark text on bright green */
+
+    /* Secondary: Dark Moss */
+    --secondary: 150 20% 18%;
+    --secondary-foreground: 140 10% 90%;
+
+    /* Muted: Deep River Stone */
+    --muted: 150 20% 15%;
+    --muted-foreground: 140 10% 60%;
+
+    /* Accent: Dark Teal/Forest */
+    --accent: 150 30% 15%;
+    --accent-foreground: 140 10% 90%;
+
+    --destructive: 0 60% 30%;
+    --destructive-foreground: 140 10% 90%;
+
+    --border: 150 20% 18%;
+    --input: 150 20% 18%;
+
+    --ring: 142 60% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
