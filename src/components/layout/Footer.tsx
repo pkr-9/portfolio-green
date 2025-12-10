@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/data/portfolio-data";
+import { Logo } from "@/components/layout/Logo";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -71,18 +72,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Column 1: Brand */}
           <div className="md:col-span-2 space-y-4">
-            <Link to="/" className="flex items-center gap-2 group w-fit">
-              <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <Code2 className="h-6 w-6 text-primary" />
-              </div>
-              <span className="font-bold text-xl tracking-tight">
-                {siteConfig.name}
-              </span>
-            </Link>
-            <p className="text-muted-foreground max-w-xs text-sm leading-relaxed">
-              Bridging organic complexity with silicon logic. Building scalable,
-              intelligent systems for the modern web.
-            </p>
+            <div className="md:col-span-2 space-y-4">
+              <Logo /> {/* Use the component here */}
+              <p className="text-muted-foreground max-w-xs text-sm leading-relaxed mt-4">
+                Bridging organic complexity with silicon logic. Building
+                scalable, intelligent systems for the modern web.
+              </p>
+            </div>
           </div>
 
           {/* Column 2: Navigation */}

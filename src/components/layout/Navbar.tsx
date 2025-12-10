@@ -3,18 +3,9 @@ import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import {
-  Menu,
-  Moon,
-  Sun,
-  Laptop,
-  Briefcase,
-  User,
-  Home,
-  Code2,
-} from "lucide-react";
-import { useTheme } from "@/components/ThemeProvider"; // Ensure this path matches your theme provider
-import { siteConfig } from "@/data/portfolio-data";
+import { Menu, Moon, Sun, Briefcase, User, Home, Code2 } from "lucide-react";
+import { useTheme } from "@/components/ThemeProvider";
+import { Logo } from "@/components/layout/Logo"; // Import the new Logo
 
 const navItems = [
   { name: "Home", path: "/", icon: <Home className="w-4 h-4 mr-2" /> },
@@ -36,7 +27,6 @@ export function Navbar() {
   const { theme, setTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
 
-  // Handle scroll effect for glassmorphism
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -55,15 +45,8 @@ export function Navbar() {
       )}
     >
       <div className="container flex h-16 items-center justify-between">
-        {/* Logo Area */}
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors">
-            <Code2 className="h-6 w-6 text-primary" />
-          </div>
-          <span className="font-bold text-xl tracking-tight hidden sm:inline-block">
-            {siteConfig.name}
-          </span>
-        </Link>
+        {/* REPLACED: Use the new Logo Component */}
+        <Logo />
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
@@ -85,7 +68,6 @@ export function Navbar() {
 
         {/* Actions Area */}
         <div className="flex items-center gap-3">
-          {/* Theme Toggler */}
           <Button
             variant="ghost"
             size="icon"
@@ -97,7 +79,7 @@ export function Navbar() {
             <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           </Button>
 
-          <Button asChild size="sm" className="hidden md:flex">
+          <Button asChild size="sm" className="hidden md:flex rounded-full">
             <Link to="/contact">Contact Me</Link>
           </Button>
 
@@ -125,7 +107,7 @@ export function Navbar() {
                     {item.name}
                   </Link>
                 ))}
-                <Button asChild className="mt-4 w-full">
+                <Button asChild className="mt-4 w-full rounded-full">
                   <Link to="/contact">Contact Me</Link>
                 </Button>
               </div>
