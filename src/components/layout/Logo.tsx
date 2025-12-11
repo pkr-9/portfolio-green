@@ -9,54 +9,69 @@ export function Logo({ className }: LogoProps) {
   return (
     <Link
       to="/"
-      className={cn("group flex items-center gap-2 select-none", className)}
+      className={cn("group flex items-center gap-3 select-none", className)}
       aria-label="SG Engineered Home"
     >
-      {/* Optional: Abstract Icon (Neural Node) */}
-      <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 transition-all duration-500 group-hover:bg-primary/20 group-hover:rotate-12">
-        <div className="absolute inset-0 rounded-xl border border-primary/20" />
-        {/* Simple geometric shape representing structure + code */}
+      {/* Abstract Icon: 'The Digital Sapling' */}
+      <div className="relative flex h-10 w-10 items-center justify-center">
+        {/* Glow Effect behind the icon */}
+        <div className="absolute inset-0 bg-primary/20 blur-md rounded-full scale-0 transition-transform duration-500 group-hover:scale-100" />
+
         <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="text-primary transition-transform duration-500 group-hover:scale-110"
+          className="relative z-10 text-primary transition-transform duration-500 group-hover:-translate-y-0.5"
         >
+          {/* Central Stem (Circuit Path) */}
           <path
-            d="M12 2L2 7L12 12L22 7L12 2Z"
+            d="M16 28V16"
             stroke="currentColor"
-            strokeWidth="2"
+            strokeWidth="2.5"
             strokeLinecap="round"
-            strokeLinejoin="round"
           />
+
+          {/* Left Branch */}
           <path
-            d="M2 17L12 22L22 17"
+            d="M16 16L9 10"
             stroke="currentColor"
-            strokeWidth="2"
+            strokeWidth="2.5"
             strokeLinecap="round"
-            strokeLinejoin="round"
           />
+
+          {/* Right Branch */}
           <path
-            d="M2 12L12 17L22 12"
+            d="M16 16L23 10"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+          />
+
+          {/* Nodes (Leaves/Data Points) */}
+          <circle cx="9" cy="10" r="2.5" fill="currentColor" />
+          <circle cx="23" cy="10" r="2.5" fill="currentColor" />
+          <circle cx="16" cy="28" r="2.5" fill="currentColor" />
+
+          {/* Central Core Node (Hollow) */}
+          <circle
+            cx="16"
+            cy="16"
+            r="3"
+            fill="var(--background)"
             stroke="currentColor"
             strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
           />
         </svg>
       </div>
 
-      {/* The Two-Row Text Logo */}
+      {/* Typography */}
       <div className="flex flex-col justify-center leading-none">
-        {/* Row 1: SG */}
-        <span className="text-2xl font-black tracking-tighter text-foreground transition-colors group-hover:text-primary/90">
+        <span className="text-xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
           SG
         </span>
-
-        {/* Row 2: Engineered */}
-        <span className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-muted-foreground transition-colors group-hover:text-primary">
+        <span className="text-[0.6rem] font-bold uppercase tracking-[0.25em] text-muted-foreground/80 group-hover:text-primary/80 transition-colors">
           Engineered
         </span>
       </div>
